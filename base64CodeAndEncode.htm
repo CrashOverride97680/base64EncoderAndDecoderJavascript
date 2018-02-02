@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cript Base64 Javacsript</title>
+</head>
+<body>
+  <form>
+    <fieldset style="margin:0 auto;width:60%;">
+      <legend>criptazione base64</legend>
+      <label style="margin:50;">INSERISCI CODICE DA CRIPTARE IN BASE 64</label>
+      <br/>
+      <br/>
+      <input type="text" name="dataCript" value="" id="dataCript" placeholder="INSERISCI QUI ">
+      <br/>
+      <br/>
+      <label id="resultConvers"></label>
+	  <br/>
+      <br/>
+	  <input type="text" name="dataCript" value="" id="dataDecript" placeholder="DECRIPT">
+      <br/>
+      <br/>
+      <label id="deConvRes"></label>
+    </fieldset>
+  </form>
+  <img style="position:relative;left:65%;top:20px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/W3C_valid.svg/1280px-W3C_valid.svg.png" alt="w3-validator-approved" width="100" height="70"/>
+	<script>
+		window.onload=function(){
+			var x = document.getElementById("dataCript");
+			document.getElementById("resultConvers").innerHTML="QUI CI SARA IL RISULTTO DELLA CONVERSIONE";
+				x.onkeyup=function(){
+					var conv = window.btoa((x.value));
+					document.getElementById("resultConvers").innerHTML="Il codice convertito e': "+conv;
+				};
+			var y = document.getElementById("dataDecript");
+			document.getElementById("deConvRes").innerHTML="QUI APPARIRA LA DECONVERSIONE DA BASE64";
+				y.onkeyup=function(){
+					var deConv = window.atob(y.value);
+					document.getElementById("deConvRes").innerHTML="Il codice convertito da base64 e': "+deConv;
+				};
+		};
+	</script>
+</body>
+</html>
